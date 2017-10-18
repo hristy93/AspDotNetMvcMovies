@@ -9,12 +9,12 @@ namespace AspDotNetMvcMovies.Models
 {
     public class Movie
     {
-        private enum GenreType
-        {
-            Action,
-            Drama,
-            ScienceFiction,
-        }
+        //private enum GenreType
+        //{
+        //    Action,
+        //    Drama,
+        //    ScienceFiction,
+        //}
 
         public int ID { get; set; }
         public string Title { get; set; }
@@ -22,9 +22,10 @@ namespace AspDotNetMvcMovies.Models
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
         public DateTime ReleaseDate { get; set; }
-        [EnumDataType(typeof(GenreType), ErrorMessage = "Choose from Action, Drama or ScienceFiction")]
+        //[EnumDataType(typeof(GenreType), ErrorMessage = "Choose from Action, Drama or ScienceFiction")]
         public string Genre { get; set; }
         [DataType(DataType.Currency)]
         public decimal Price { get; set; }
+        public string Rating { get; set; }
     }
 }
