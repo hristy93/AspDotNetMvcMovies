@@ -8,12 +8,14 @@
 
 <p>
     @Html.ActionLink("Create New", "Create")
-
+    
     @using (Html.BeginForm("Index", "Movies", FormMethod.Get))
     {
     <p>
+        @Html.Label("Genre")
+        @Html.DropDownList("searchedGenre", "")
         @Html.Label("Title")
-        @Html.TextBox("SearchedTitle")
+        @Html.TextBox("searchedTitle")
         <input type="submit" value="Filter" />
     </p>
     }
