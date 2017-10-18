@@ -11,9 +11,9 @@ namespace AspDotNetMvcMovies.Controllers
         // 
         // GET: /HelloWorld/ 
 
-        public string Index()
+        public ActionResult Index()
         {
-            return "This is my <b>first page</b> ...";
+            return View();
         }
 
         // 
