@@ -9,23 +9,24 @@ namespace AspDotNetMvcMovies.Models
 {
     public class Movie
     {
-        //private enum GenreType
-        //{
-        //    Action,
-        //    Drama,
-        //    ScienceFiction,
-        //}
+        private const string _wordRegularExpression = @"^[A-Z]+[a-zA-Z''-'\s]*$";
 
         public int ID { get; set; }
+        [StringLength(50, MinimumLength = 3)]
         public string Title { get; set; }
         [DisplayName("Release Date")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
         public DateTime ReleaseDate { get; set; }
-        //[EnumDataType(typeof(GenreType), ErrorMessage = "Choose from Action, Drama or ScienceFiction")]
+        [RegularExpression(_wordRegularExpression)]
+        [Required]
+        [StringLength(20)]
         public string Genre { get; set; }
         [DataType(DataType.Currency)]
+        [Range(1, 100)]
         public decimal Price { get; set; }
+        [RegularExpression(_wordRegularExpression)]
+        [StringLength(5)]
         public string Rating { get; set; }
     }
 }

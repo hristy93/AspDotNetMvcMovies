@@ -211,6 +211,10 @@
     <Compile Include="Migrations\201710181805119_Rating.Designer.cs">
       <DependentUpon>201710181805119_Rating.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710181945110_NewPropertiesAttributes.cs" />
+    <Compile Include="Migrations\201710181945110_NewPropertiesAttributes.Designer.cs">
+      <DependentUpon>201710181945110_NewPropertiesAttributes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -309,6 +313,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710181805119_Rating.resx">
       <DependentUpon>201710181805119_Rating.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710181945110_NewPropertiesAttributes.resx">
+      <DependentUpon>201710181945110_NewPropertiesAttributes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
