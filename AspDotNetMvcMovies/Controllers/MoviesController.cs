@@ -135,6 +135,14 @@ namespace AspDotNetMvcMovies.Controllers
             return RedirectToAction("Index");
         }
 
+        [ChildActionOnly]
+        public ActionResult LatestReleasedMovie()
+        {
+            var newestReleaseDate = db.Movies.Select(movie => movie.ReleaseDate).Max();
+            var newestMovie = db.Movies.Single(movie => movie.ReleaseDate == newestReleaseDate);
+            return PartialView("_LatestReleasedMovie", newestMovie);
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
