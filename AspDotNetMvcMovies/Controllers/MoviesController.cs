@@ -17,17 +17,15 @@ namespace AspDotNetMvcMovies.Controllers
         // GET: Movies
         public ActionResult Index(string searchedGenre, string searchedTitle)
         {
-            var genres = new List<string>();
+            var genres = db.Movies
+                .OrderBy(movie => movie.Genre)
+                .Select(movie => movie.Genre)
+                .Distinct()
+                .ToList();
 
-            var genreQuery = from d in db.Movies
-                           orderby d.Genre
-                           select d.Genre;
-
-            genres.AddRange(genreQuery.Distinct());
             ViewBag.searchedGenre = new SelectList(genres);
 
-            var movies = from m in db.Movies
-                         select m;
+            var movies = db.Movies.Select(movie => movie);
 
             if (!String.IsNullOrEmpty(searchedTitle))
             {
